@@ -198,7 +198,7 @@ task setupUiDev << {
 }
 
 task buildUi << {
-    def process = "grunt build".execute(null, new File("src/main/webapp"))
+    def process = "npm run build".execute()
     process.text.eachLine {
         println it
     }
