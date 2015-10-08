@@ -15,7 +15,11 @@ module.exports = {
     target: 'web',
     module: {
         loaders: [
-            { test: /\.js$/, loader: 'babel-loader' }
+            { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+            { test: /\.less$/, loader: 'css!less' },
+            { test: /\.(png|jpg|jpeg|gif|svg)$/, loader: 'url-loader?limit=10000' },
+            { test: /\.(woff|woff2)$/, loader: 'url-loader?limit=10000' },
+            { test: /\.(ttf|eot)$/, loader: 'url-loader?limit=10000' }
         ]
     }
 };
