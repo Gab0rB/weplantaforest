@@ -211,8 +211,8 @@ build.dependsOn buildUi
 buildUi.dependsOn setupUiDev
 
 task watchUiDev << {
-    "grunt dev".execute(null, new File("src/main/webapp"))
 }
+
 bootRun.dependsOn watchUiDev
 
 liveReload {
