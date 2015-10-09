@@ -18,7 +18,7 @@
     "raml-client-generator": "0.1.1",
     "url-loader": "0.5.6",
     "webpack": "1.12.2",
-    "webpack-dev-server": "1.12.0"
+    "webpack-livereload-plugin": "0.4.0"
   },
   "engines": {
     "node": ">=0.12.4"
@@ -28,7 +28,7 @@
   },
   "scripts": {
     "predev": "rm -rf $npm_package_config_webappPath && mkdir $npm_package_config_webappPath",
-    "dev": "npm run generateApi && webpack --config webpack --watch --progress --colors -d",
+    "dev": "npm run generateApi && NODE_ENV=development webpack --config webpack --watch --progress --colors -d",
     "pregenerateApi": "rm -rf ./src/main/webapp/api-client",
     "generateApi": "./node_modules/raml-client-generator/bin/raml-client.js ./raml/iplantatree.dev.raml -o ./src/main/webapp/api-client -l javascript"
   },
