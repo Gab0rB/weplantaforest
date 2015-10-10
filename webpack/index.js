@@ -3,7 +3,8 @@ var path = require('path');
 var rootPath = process.cwd();
 var webappPath = path.join(rootPath, 'src', 'main');
 var webappSourcePath = path.join(webappPath, 'webapp');
-var webappOutputPath = path.join(webappPath, 'resources', 'static', 'webapp');
+var webappOutputPath = path.join(webappPath, 'resources', 'static');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var LiveReloadPlugin = require('webpack-livereload-plugin');
 
@@ -11,12 +12,31 @@ var isDevMode = typeof process.env.NODE_ENV !== 'undefined' && process.env.NODE_
 
 function generateConfig() {
     "use strict";
-    var config = {
+
+    var htmlMinifyOptions = {
+        removeComments: true,
+        collapseWhitespace: true,
+        collapseBooleanAttributes: true,
+        removeAttributeQuotes: true,
+        removeRedundantAttributes: true
+    };
+
+    var htmlPluginConfig = {
+        title: 'I Plant A Tree',
+        template: path.join(webappSourcePath, 'index.tmp'),
+        inject: 'body',
+        minify: isDevMode ? false : htmlMinifyOptions,
+        livereload: isDevMode
+    };
+
+    var webpackConfig = {
         context: webappPath,
-        entry: ['./webapp/main'],
+        entry: {
+            'main': './webapp/main'
+        },
         output: {
             path: webappOutputPath,
-            filename: 'main.js'
+            filename: isDevMode ? 'webapp/[name].js' : 'webapp/[name]-[hash].js'
         },
         target: 'web',
         module: {
@@ -28,16 +48,18 @@ function generateConfig() {
                 { test: /\.(ttf|eot)$/, loader: 'url-loader?limit=10000' }
             ]
         },
-        plugins: []
+        plugins: [
+            new HtmlWebpackPlugin(htmlPluginConfig)
+        ]
     };
 
     if(isDevMode) {
-        config.plugins.push(
+        webpackConfig.plugins.push(
             new LiveReloadPlugin()
         )
     }
 
-    return config;
+    return webpackConfig;
 }
 
 module.exports = generateConfig();

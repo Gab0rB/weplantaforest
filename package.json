@@ -12,6 +12,7 @@
     "eslint": "1.6.0",
     "eslint-plugin-filenames": "0.1.2",
     "file-loader": "0.8.4",
+    "html-webpack-plugin": "^1.6.2",
     "less": "2.5.3",
     "less-loader": "2.2.1",
     "popsicle": "1.1.1",
@@ -30,7 +31,7 @@
     "clientGenerator": "./node_modules/raml-client-generator/bin/raml-client.js"
   },
   "scripts": {
-    "clean": "rimraf $npm_package_config_webappPath $npm_package_config_apiClientPath",
+    "clean": "rimraf $npm_package_config_webappPath $npm_package_config_apiClientPath ./src/main/resources/static/index.html",
     "predev": "npm run clean && npm run generateApi",
     "dev": "NODE_ENV=development webpack --config webpack --watch --progress --colors -d",
     "generateApi": "$npm_package_config_clientGenerator ./raml/iplantatree.raml -o $npm_package_config_apiClientPath -l javascript"
