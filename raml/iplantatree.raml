@@ -1,7 +1,8 @@
 #%RAML 0.8
 ---
 title: I Plant A Tree API
-baseUri: http://iplantatree.org:8081/rest/{version}
+#baseUri: http://iplantatree.org/rest/{version}
+baseUri: http://mocksvc.mulesoft.com/mocks/77da4fc3-41f3-48fb-9f6a-a9bd0e7177fa/rest/{version}
 version: v1
 mediaType: application/json
 traits:
@@ -82,6 +83,12 @@ resourceTypes:
         body:
           application/json:
             schema: trees
+  put:
+    responses:
+      200:
+        body:
+          application/json:
+            schema: tree
   /{id}:
     type:
       collection-item:
@@ -187,14 +194,14 @@ resourceTypes:
             application/json:
               example: !include co2.sample
   /plants/newest:
-      get:
+    get:
   /users/newest:
-      get:
+    get:
   /users/best:
-      get:
+    get:
   /teams/newest:
-      get:
+    get:
   /teams/best:
-      get:
+    get:
   /comments/newest:
-      get:
+    get:
