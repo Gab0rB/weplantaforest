@@ -16,6 +16,7 @@
     "less-loader": "2.2.1",
     "popsicle": "1.1.1",
     "raml-client-generator": "0.1.1",
+    "rimraf": "2.4.3",
     "url-loader": "0.5.6",
     "webpack": "1.12.2",
     "webpack-livereload-plugin": "0.4.0"
@@ -24,13 +25,15 @@
     "node": ">=0.12.4"
   },
   "config": {
-    "webappPath": "./src/main/resources/static/webapp"
+    "webappPath": "./src/main/resources/static/webapp",
+    "apiClientPath": "./src/main/webapp/api-client",
+    "clientGenerator": "./node_modules/raml-client-generator/bin/raml-client.js"
   },
   "scripts": {
-    "predev": "rm -rf $npm_package_config_webappPath && mkdir $npm_package_config_webappPath",
-    "dev": "npm run generateApi && NODE_ENV=development webpack --config webpack --watch --progress --colors -d",
-    "pregenerateApi": "rm -rf ./src/main/webapp/api-client",
-    "generateApi": "./node_modules/raml-client-generator/bin/raml-client.js ./raml/iplantatree.dev.raml -o ./src/main/webapp/api-client -l javascript"
+    "clean": "rimraf $npm_package_config_webappPath $npm_package_config_apiClientPath",
+    "predev": "npm run clean && npm run generateApi",
+    "dev": "NODE_ENV=development webpack --config webpack --watch --progress --colors -d",
+    "generateApi": "$npm_package_config_clientGenerator ./raml/iplantatree.raml -o $npm_package_config_apiClientPath -l javascript"
   },
   "private": true
 }
