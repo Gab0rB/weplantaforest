@@ -170,8 +170,6 @@ task testUi << {
 task testAll << {
 }
 
-testAll.dependsOn testUi, test
-
 task setupUiDev << {
     def process = "npm prune".execute()
     process.text.eachLine {
@@ -231,3 +229,5 @@ task deploy(dependsOn: [clean, buildUi, distTar]) << {
         }
     }
 }
+
+testAll.dependsOn buildUi, testUi, test
