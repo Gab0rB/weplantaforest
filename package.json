@@ -32,9 +32,11 @@
   },
   "scripts": {
     "clean": "rimraf $npm_package_config_webappPath $npm_package_config_apiClientPath ./src/main/resources/static/index.html",
+    "generateApi": "$npm_package_config_clientGenerator ./raml/iplantatree.raml -o $npm_package_config_apiClientPath -l javascript",
     "predev": "npm run clean && npm run generateApi",
     "dev": "NODE_ENV=development webpack --config webpack --watch --progress --colors -d",
-    "generateApi": "$npm_package_config_clientGenerator ./raml/iplantatree.raml -o $npm_package_config_apiClientPath -l javascript"
+    "prebuild": "npm run clean && npm run generateApi",
+    "build": "webpack --config webpack --progress --colors -p"
   },
   "private": true
 }
