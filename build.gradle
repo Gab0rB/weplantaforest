@@ -51,7 +51,6 @@ apply plugin: 'spring-boot'
 apply plugin: 'findbugs'
 apply plugin: 'jacoco'
 apply plugin: 'com.github.kt3k.coveralls'
-apply plugin: 'org.kordamp.gradle.livereload'
 apply plugin: 'org.hidetake.ssh'
 
 repositories {
@@ -202,11 +201,6 @@ task buildUi << {
 build.dependsOn buildUi
 
 buildUi.dependsOn setupUiDev
-
-task watchUiDev << {
-}
-
-bootRun.dependsOn watchUiDev
 
 task deploy(dependsOn: [clean, buildUi, distTar]) << {
     ssh.run {
