@@ -208,10 +208,6 @@ task watchUiDev << {
 
 bootRun.dependsOn watchUiDev
 
-liveReload {
-    docRoot='src/main/webapp/client'
-}
-
 task deploy(dependsOn: [clean, buildUi, distTar]) << {
     ssh.run {
         session(remotes.ipatHost) {
