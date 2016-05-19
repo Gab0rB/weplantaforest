@@ -33,6 +33,7 @@
     "karma-script-launcher": "~0.1.0",
     "karma-sinon-chai": "^1.0.0",
     "mocha": "^2.2.5",
+    "nightwatch": "^0.8.18",
     "open": "~0.0.5",
     "supertest": "~0.11.0",
     "webpack": "^1.13.0",

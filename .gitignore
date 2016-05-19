@@ -27,3 +27,5 @@ files.list
 .tmp
 ui/client/bower_components/
 ui/resources
+ui/e2e/nightwatch-specs/**
+
