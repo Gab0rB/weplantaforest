@@ -2,9 +2,6 @@
 
 [![Join the chat at https://gitter.im/Dica-Developer/weplantaforest](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Dica-Developer/weplantaforest?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![Open Issues](http://img.shields.io/github/issues/Dica-Developer/weplantaforest.svg?style=flat-square&label=Open%20Issues)](https://github.com/Dica-Developer/weplantaforest/issues)
-[![Build Status](http://img.shields.io/travis/Dica-Developer/weplantaforest/master.svg?style=flat-square&label=Travis%20CI)](https://travis-ci.org/Dica-Developer/weplantaforest)
-[![Coverage Status](http://img.shields.io/coveralls/Dica-Developer/weplantaforest/master.svg?style=flat-square&label=Test%20Coverage)](https://coveralls.io/r/Dica-Developer/weplantaforest?branch=master)
 [![Code Climate](https://img.shields.io/codeclimate/github/Dica-Developer/weplantaforest.svg?style=flat-square)](https://codeclimate.com/github/Dica-Developer/weplantaforest)
 
 
