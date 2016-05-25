@@ -2,6 +2,7 @@
 
 [![Join the chat at https://gitter.im/Dica-Developer/weplantaforest](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Dica-Developer/weplantaforest?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+[![Coverage Status](https://coveralls.io/repos/github/Gab0rB/weplantaforest/badge.svg?branch=master)](https://coveralls.io/github/Gab0rB/weplantaforest?branch=master)
 [![Code Climate](https://img.shields.io/codeclimate/github/Dica-Developer/weplantaforest.svg?style=flat-square)](https://codeclimate.com/github/Dica-Developer/weplantaforest)
 
 
