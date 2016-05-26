@@ -26,6 +26,7 @@ apply plugin: 'jacoco'
 apply plugin: 'com.github.hauner.jarTest'
 
 jar {
+logger.lifecycle "tark jar finished in common"
     baseName = 'wpaf'
     version = '0.0.1-SNAPSHOT'
 }

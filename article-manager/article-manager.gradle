@@ -11,6 +11,8 @@ buildscript {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
         classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.6.3'
     }
+   
+    
 }
 
 apply plugin: 'java'
@@ -23,6 +25,7 @@ apply plugin: 'application'
 apply plugin: 'jacoco'
 
 jar {
+logger.lifecycle "task jar finished in article-manager"
     baseName = 'wpaf'
     version = '0.0.1-SNAPSHOT'
 }
@@ -36,8 +39,9 @@ repositories {
     maven { url "https://repo.spring.io/milestone" }
 }
 
+
 dependencies {
-    compile project(':common')
+//    compile project(':common')
 
     compile('org.springframework.boot:spring-boot-starter-data-jpa:' + springBootVersion)
     compile('org.springframework.boot:spring-boot-starter-data-rest:' + springBootVersion)
@@ -66,7 +70,7 @@ dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test:' + springBootVersion) 
     testCompile('org.springframework.restdocs:spring-restdocs-mockmvc:1.0.0.RELEASE')
     
-    testCompile project (path: ':common', configuration: 'testArchives')
+//    testCompile project (path: ':common', configuration: 'testArchives')
  }
 
 mainClassName = 'org.dicadeveloper.weplantaforest.WeplantaforestArticleManagerApplication'
