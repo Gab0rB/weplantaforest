@@ -93,10 +93,6 @@ jacocoTestReport {
 }
 
 test {
-  jacoco {
-    enabled false
-  }
-
   testLogging {
     events 'passed'
   }
