@@ -23,7 +23,6 @@ apply plugin: 'application'
 apply plugin: 'jacoco'
 
 jar {
-logger.lifecycle "task jar finished in article-manager"
     baseName = 'wpaf'
     version = '0.0.1-SNAPSHOT'
 }
