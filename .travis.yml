@@ -3,9 +3,6 @@ language:
 jdk:
   - oraclejdk8
   
-before_install:
-  - cp gradle.properties.ci gradle.properties
-
 before_script:
   - sudo service postgresql stop || true
   - sudo service mysql stop || true
