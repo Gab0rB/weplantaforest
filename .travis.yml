@@ -2,6 +2,9 @@ language:
   - java
 jdk:
   - oraclejdk8
+  
+before_install:
+  - cp gradle.properties.ci gradle.properties
 
 before_script:
   - sudo service postgresql stop || true
@@ -17,7 +20,7 @@ before_script:
   - sudo service x11-common stop || true
   - nvm install v5.5.0
   - nvm use v5.5.0
-script: ./gradlew test
+script: ./gradlew check
 after_success: ./gradlew coveralls uploadArchives
 
 cache:
