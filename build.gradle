@@ -131,7 +131,9 @@ subprojects {
 }
 
 // Only report code coverage for projects that are distributed
-def publishedProjects = subprojects.findAll { }
+def publishedProjects = subprojects.findAll {true}
+
+//  logger.lifecycle "published projects: " + publishedProjects
 
 task jacocoRootReport(type: JacocoReport, group: 'Coverage reports') {
   description = 'Generates an aggregate report from all subprojects'
