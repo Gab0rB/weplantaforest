@@ -19,8 +19,3 @@ before_script:
   - nvm use v5.5.0
 script: ./gradlew check
 after_success: ./gradlew coveralls uploadArchives
-
-cache:
-  directories:
-    - $HOME/.gradle
-
